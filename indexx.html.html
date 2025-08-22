@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunwar Vinay • AI Developer Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --bg: #f0f2f5; /* Light background */
+            --fg: #212121; /* Dark foreground */
+            --card: #ffffff; /* White card background for light mode */
+            --muted: #757575; /* Darker muted text */
+
+            /* Variables from the provided context for the skills, projects, and certifications sections */
+            --primary-original: #5e3be8;
+            --primary-dark-original: #4a2ad5;
+            --secondary-original: #121212; /* Can remain or be adjusted */
+            --light-original: #f8f8f8; /* Can remain or be adjusted */
+            --dark-original: #212121; /* Can remain or be adjusted */
+            --gray-original: #616161; /* Darker gray for filter button text */
+            --light-gray-original: #bdbdbd; /* Darker light gray for filter button border */
+            
+            --section-padding-original: 60px 0; /* Reduced from 100px */
+            --border-radius-original: 12px;
+            --box-shadow-original: 0 15px 40px -10px rgba(0,0,0,0.2);
+            --transition-original: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+         body.dark {
+            --text: #f8f9fa;
+            --bg: #1a1a2e;
+            --card-bg: #16213e; /* Dark card background */
+            --card: var(--card-bg); /* Make --card use the dark background in dark mode */
+            --fg: #f8f9fa; /* Adjust foreground for dark mode */
+            --muted: #b0b0b0; /* Adjust muted for dark mode */
+            --primary-original: #8338ec; /* Adjust primary for dark mode if needed */
+            --primary-dark-original: #6a2ad5; /* Adjust primary dark for dark mode if needed */
+        }
+
+        body.light {
+            --text: #2b2d42;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --card: var(--card-bg); /* Make --card use the light background in light mode */
+            --fg: #212121; /* Adjust foreground for light mode */
+            --muted: #757575; /* Adjust muted for light mode */
+            --primary-original: #5e3be8; /* Reset primary for light mode */
+            --primary-dark-original: #4a2ad5; /* Reset primary dark for light mode */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .chip {
+            border: 1px solid rgba(0,0,0,.1); /* Adjusted for light theme */
+            background: rgba(0,0,0,.03); /* Adjusted for light theme */
+            backdrop-filter: blur(6px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            color: var(--fg); /* Ensure text color is visible */
+        }
+        body.dark .chip {
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,.03);
+            color: var(--fg);
+        }
+        .card {
+            background: var(--card); /* Now uses the --card variable */
+            border: 1px solid rgba(0,0,0,.08); /* Adjusted for light theme */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More prominent shadow */
+            border-radius: 1rem; /* Consistent border-radius */
+        }
+        body.dark .card {
+            border: 1px solid rgba(255,255,255,.08); /* Lighter border for dark mode */
+        }
+        .nav-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width .3s ease-in-out; /* Smoother transition */
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-title {
+            letter-spacing: .04em; /* Slightly more spacing for titles */
+            font-size: 2.5rem; /* Larger section titles */
+            margin-bottom: 1.5rem; /* More space below titles */
+            text-align: center; /* Center align headings */
+            position: relative; /* For underline effect */
+            padding-bottom: 10px; /* Space for the underline */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px; /* Width of the underline */
+            height: 4px; /* Thickness of the underline */
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); /* Gradient underline */
+            border-radius: 2px; /* Rounded corners for the underline */
+        }
+        .divider {
+            height: 1px;
+            background: rgba(0,0,0,.1); /* Adjusted for light theme */
+        }
+        body.dark .divider {
+            background: rgba(255,255,255,.1);
+        }
+        .print-btn {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+            border: 1px solid rgba(0, 0, 0, .15); /* Darker border */
+            background: rgba(0, 0, 0, .05); /* Darker background */
+            color: var(--fg); /* Ensure text color is visible */
+        }
+        @media print {
+            .noprint {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .card {
+                border: 1px solid #ccc;
+                background: #fff;
+                box-shadow: none; /* Remove shadow for print */
+            }
+            .chip {
+                border: 1px solid #ccc;
+                background: #fff;
+                box-shadow: none;
+                color: black;
+            }
+            .gradient-text {
+                color: white;
+                -webkit-background-clip: initial;
+                background-clip: initial;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly opaque white for light mode */
+            color: var(--fg); /* Use foreground color for header text */
+            border-bottom: 1px solid rgba(0,0,0,.08); /* Light border for light mode */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+            backdrop-filter: blur(6px); /* Keep blur effect */
+        }
+
+        body.dark header {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker, slightly opaque black for dark mode */
+            border-bottom: 1px solid rgba(255,255,255,.08); /* Lighter border for dark mode */
+            box-shadow: 0 2px 4px rgba(255,255,255,0.05); /* Lighter shadow for dark mode */
+        }
+
+        #mobileMenu {
+            border-top: 1px solid rgba(0,0,0,.1);
+        }
+        body.dark #mobileMenu {
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+
+        #menuBtn {
+            border: 1px solid rgba(0,0,0,.15); /* Default border */
+            background-color: transparent; /* Default background */
+        }
+        body.dark #menuBtn {
+            border: 1px solid rgba(255,255,255,.15); /* Lighter border in dark mode */
+        }
+        #menuBtn:hover {
+            background-color: rgba(0,0,0,.05); /* Subtle hover for light mode */
+        }
+        body.dark #menuBtn:hover {
+            background-color: rgba(255,255,255,.05); /* Subtle hover for dark mode */
+        }
+
+        nav a.nav-link {
+            color: var(--fg);
+        }
+
+
+        /* Styles for the Skills Section from the provided context */
+        .section { /* Added a general section class for consistent padding */
+            background-color: var(--bg);
+            padding: var(--section-padding-original);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--card); /* Now uses the --card variable */
+            padding: 2.5rem;
+            border-radius: var(--border-radius-original);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition-original);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,.08);
+        }
+        body.dark .skill-card {
+            border: 1px solid rgba(255,255,255,.08); /* Lighter border for dark mode */
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-original);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background-color: rgba(94, 59, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-original);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--fg); /* Adjusted for theme change */
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--muted); /* Adjusted for theme change */
+        }
+
+        /* Styles for the Projects Section from the provided context */
+        #projects {
+            position: relative;
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: transparent;
+            border: 1px solid var(--light-gray-original);
+            border-radius: 50px;
+            color: var(--gray-original);
+            font-weight: 500;
+            transition: var(--transition-original);
+            cursor: pointer;
+        }
+        body.dark .filter-btn {
+            border: 1px solid rgba(255,255,255,.3);
+            color: var(--muted);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-original);
+            color: white;
+            border-color: var(--primary-original);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card); /* Now uses the --card variable */
+            border-radius: var(--border-radius-original);
+            overflow: hidden;
+            transition: var(--transition-original);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid rgba(0,0,0,.08);
+        }
+        body.dark .project-card {
+            border: 1px solid rgba(255,255,255,.08); /* Lighter border for dark mode */
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-original);
+        }
+
+        .project-img {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(18, 18, 46, 0.1) 0%, rgba(94, 59, 232, 0.6) 100%);
+            opacity: 0;
+            transition: var(--transition-original);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay a {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-original);
+            font-size: 1.2rem;
+            transition: var(--transition-original);
+        }
+
+        .project-overlay a:hover {
+            background-color: var(--primary-original);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--fg); /* Adjusted for theme change */
+        }
+
+        .project-info p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: var(--muted); /* Adjusted for theme change */
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags span {
+            padding: 0.3rem 0.8rem;
+            background-color: rgba(94, 59, 232, 0.1);
+            color: var(--primary-original);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        /* Added style for bolding project tags */
+        .project-tags span {
+            font-weight: bold;
+        }
+
+        /* Styles for Certifications Section from the provided context */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background-color: var(--card); /* Now uses the --card variable */
+            border-radius: var(--border-radius-original);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: var(--transition-original);
+            border: 1px solid rgba(0,0,0,.08);
+        }
+        body.dark .certification-card {
+            border: 1px solid rgba(255,255,255,.08); /* Lighter border for dark mode */
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-original);
+        }
+
+        .certification-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .certification-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certification-body {
+            padding: 1.5rem;
+        }
+
+        .certification-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-original);
+        }
+
+        .certification-body p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: var(--muted); /* Adjusted for theme change */
+        }
+
+        .certification-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--muted); /* Adjusted for theme change */
+            border-top: 1px solid rgba(0,0,0,.1);
+            padding-top: 1rem;
+        }
+        body.dark .certification-meta {
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+
+        /* Styles for Experience, Education, Achievements, Interests */
+        /* These elements are within a .card, so their text color will be handled by --fg and --muted */
+        .card h3 {
+            color: var(--fg); /* Adjusted for theme change */
+        }
+        .card p {
+            color: var(--fg); /* Changed from --muted to --fg for darker text */
+        }
+        .card ul li {
+            color: var(--fg); /* Adjusted for theme change */
+        }
+        /* Contact section specific text colors */
+        #contact h4 {
+            color: var(--fg);
+        }
+        #contact a {
+            color: var(--fg); /* For email, phone, LinkedIn, GitHub links */
+        }
+        #contact label {
+            color: var(--fg);
+        }
+        #contact input, #contact textarea {
+            background-color: var(--card); /* Input fields should also change background */
+            color: var(--fg); /* Input text color */
+            border-color: rgba(0,0,0,.15); /* Default border */
+        }
+        body.dark #contact input, body.dark #contact textarea {
+            border-color: rgba(255,255,255,.15); /* Lighter border in dark mode */
+        }
+
+
+        /* Animations from the provided context */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive Styles for Skills, Projects, and Certifications Sections */
+        @media (max-width: 1200px) {
+            .section {
+                padding: 50px 0; /* Reduced */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .projects-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            .certifications-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 0; /* Reduced */
+            }
+            .skills-container,
+            .projects-container,
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 30px 0; /* Reduced */
+            }
+            .project-filters {
+                gap: 0.5rem;
+            }
+            .filter-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Custom button style for Download CV */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-original); /* Using original primary color */
+            color: white;
+            border-radius: var(--border-radius-original);
+            font-weight: 600;
+            transition: var(--transition-original);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(94, 59, 232, 0.2);
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark-original); /* Using original primary dark color */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(94, 59, 232, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased light">
+<!-- Header / Navbar -->
+<header class="animate__animated animate__fadeInDown noprint sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between py-4">
+      <a href="#home" class="font-semibold text-lg tracking-wide gradient-text">Kunwar Vinay</a>
+      <nav class="hidden md:flex items-center gap-10 text-sm">
+        <a class="nav-link" href="#Home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#Skills">Skills</a>
+        <a class="nav-link" href="#Experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#certifications">Certifications</a>
+        
+        <a class="nav-link" href="#achievements">Achievements</a>
+        <a class="nav-link" href="#interests">Interests</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="theme-toggle p-2 rounded-full" aria-label="Toggle theme">
+                        <i class="fas fa-moon text-xl" style="color: var(--fg);"></i>
+                    </button>
+        <button id="menuBtn" class="md:hidden px-3 py-2 rounded-lg">
+          <i class="fa-solid fa-bars" style="color: var(--fg);"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden">
+    <div class="max-w-6xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      
+      <a class="nav-link" href="#achievements">Achievements</a>
+      <a class="nav-link">Interests</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="Home" class="animate__animated animate__fadeIn py-16 relative"> <!-- Changed py-24 to py-16 -->
+    <div class="container mx-auto px-6 py-12 md:py-24">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                    Hi, I'm <span class="gradient-text">Kunwar Vinay</span>
+                </h1>
+                <h3 class="text-2x1 md:text-3xl font-medium leading-tight">
+                   Generative AI & LLM Explorer
+                </h3>
+                 <p class="text-lg mb-8 max-w-lg mt-6">
+                        A Generative AI & LLM Explorer specializing in conversational AI, large language models, and next-gen intelligent systems designed to shape the future of human–AI interaction.
+                    </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <span class="chip px-4 py-2 shadow-sm rounded-full text-xs"><i class="fa-solid fa-location-dot mr-2"></i>Jalandhar, Punjab</span>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full ring-4 ring-blue-500 ring-opacity-50">
+                        <img src="C:\Users\admin\OneDrive\Desktop\portfolio\image\IMG-20250820-WA0005.jpg" alt="Kunwar Vinay's Photo">
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Availability card moved here -->
+        <div class="mt-12 md:mt-20 flex justify-center">
+            <div class="card rounded-2xl p-8 shadow-lg w-full md:w-2/3 lg:w-1/2">
+                <p class="text-sm text-gray-900">Availability</p> <!-- Added text-gray-900 for darker text -->
+                <p class="text-lg text-gray-900">Open to Internships & Entry-level AI roles</p> <!-- Added text-gray-900 for darker text -->
+                <div class="divider my-4"></div>
+                <ul class="text-sm space-y-2">
+                    <li class="text-gray-800"><i class="fa-regular fa-circle-check mr-2 text-green-500"></i>Remote or On-site (Punjab/NCR)</li> <!-- Added text-gray-800 -->
+                    <li class="text-gray-800"><i class="fa-regular fa-circle-check mr-2 text-green-500"></i>Project-based collaborations</li> <!-- Added text-gray-800 -->
+                    <li class="text-gray-800"><i class="fa-regular fa-circle-check mr-2 text-green-500"></i>Part-time or Full-time</li> <!-- Added text-gray-800 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Summary -->
+<!-- Changed py-20 to py-10 to reduce gap -->
+<section id="about" class="animate__animated animate__fadeInUp py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-4">About Me</h2>
+    <div class="card rounded-2xl p-8 shadow-lg leading-relaxed text-black"> <!-- Changed text-black/80 to text-black for darker text -->
+      <p>Final-year BCA student aspiring to become an AI Developer. Skilled in AI tools (ChatGPT, DeepSeek, Gamma, Canva) with beginner-level Python and ML experience. Short-term aim: deliver AI-driven solutions; Long-term vision: specialize in Generative AI and LLMs to build futuristic AI assistants.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section animate__animated animate__fadeInRight">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Education</h2>
+    <div class="card rounded-2xl p-8 shadow-lg">
+      <h3 class="text-lg font-semibold">Bachelor of Computer Applications (BCA)</h3>
+      <p class="text-sm">DAV University, Jalandhar</p>
+      <p class="text-sm">Expected Graduation: Jan 2026 • Current Year: Final Year</p>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="Skills" class="section animate__animated animate__fadeInLeft">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Development</h3>
+                <p>Expertise in Python for AI/ML applications, data analysis, and automation with experience in Django and Flask frameworks.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Implementation of supervised and unsupervised algorithms including regression, classification, clustering, and neural networks.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Deep Learning</h3>
+                <p>Experience with TensorFlow, PyTorch for computer vision, natural language processing, and generative models.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Data Science</h3>
+                <p>Proficient in Pandas, NumPy, Scikit-learn for data analysis, feature engineering, and predictive modeling.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building responsive websites and web applications using HTML5, CSS3, JavaScript, and modern frameworks.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Development</h3>
+                <p>Android app development with Java/Kotlin and experience with Firebase backend services.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>AI Cloud Services</h3>
+                <p>Integration of AWS AI services, Google Cloud ML, and Microsoft Azure Cognitive Services in applications.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Project Management</h3>
+                <p>Agile development methodologies combined with tools like Git, JIRA, and CI/CD pipelines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="Experience" class="section animate__animated animate__fadeInRight">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Professional Experience</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      
+      <div class="card rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h3 class="text-lg font-semibold">A2IT — Internship (Artificial Intelligence)</h3>
+            <p class="text-sm">Jun 2025 – Jul 2025</p>
+          </div>
+          <span class="chip px-4 py-2 shadow-sm rounded-full text-xs">AI Internship</span>
+        </div>
+        <ul class="mt-4 list-disc list-inside space-y-2">
+          <li>Applied AI concepts to real-world tasks such as building beginner ML models and designing AI-powered automation workflows.</li><li>Contributed to small projects (predictive models, data handling tasks).</li><li>Completed assigned projects and tasks under mentorship.</li>
+        </ul>
+      </div>
+    
+      <div class="card rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h3 class="text-lg font-semibold">ExternsClub — Internship (Artificial Intelligence)</h3>
+            <p class="text-sm">Mar 2025 – Apr 2025</p>
+          </div>
+          <span class="chip px-4 py-2 shadow-sm rounded-full text-xs">AI Internship</span>
+        </div>
+        <ul class="mt-4 list-disc list-inside space-y-2">
+          <li>Learned fundamentals of AI and ML through guided training.</li><li>Developed and showcased small AI projects during the program.</li><li>Gained hands-on experience in AI tools and beginner model development.</li>
+        </ul>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section animate__animated animate__fadeInUp">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Featured Projects</h2>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="data">Data Science</button>
+        </div>
+        <div class="projects-container">
+            <div class="project-card" data-category="ai">
+                <div class="project-img">
+                    <img src="https://biologicalmodeling.org/assets/images/Iris_virginica.jpg" alt="Machine learning interface showing iris flower classification visualization with decision boundaries">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Iris Flower Classification</h3>
+                    <p>Machine learning model classifying iris flowers into species using Python and scikit-learn with 98% accuracy.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">Python</span>
+                        <span class="font-bold">Scikit-learn</span>
+                        <span class="font-bold">Pandas</span>
+                        <span class="font-bold">Classification</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai">
+                <div class="project-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkm_5cCxbiZMOE2ovMmu4lD3mstmeW4h5xFA&s" alt="Voice assistant mobile app interface with waveform visualization and command suggestions">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Vision Voice Assistant</h3>
+                    <p>AI-powered assistant combining speech recognition with computer vision capabilities for hands-free device control.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">Python</span>
+                        <span class="font-bold">TensorFlow</span>
+                        <span class="font-bold">NLP</span>
+                        <span class="font-bold">Android</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern dashboard interface showing house rental price predictions with interactive charts">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Rental Price Predictor</h3>
+                    <p>Web application predicting house rental prices using machine learning with Flask backend and interactive visualizations.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">Python</span>
+                        <span class="font-bold">Flask</span>
+                        <span class="font-bold">JavaScript</span>
+                        <span class="font-bold">Regression</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="data">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Data visualization dashboard showing student performance metrics and predictions">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Student Performance Predictor</h3>
+                    <p>Regression model analyzing academic factors to predict student exam scores with 92% accuracy.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">Python</span>
+                        <span class="font-bold">Pandas</span>
+                        <span class="font-bold">Matplotlib</span>
+                        <span class="font-bold">EDA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="mobile">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mobile app screens showing productivity application with clean UI and dark theme">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Task Manager App</h3>
+                    <p>Android productivity app with AI-powered task suggestions and smart scheduling using Firebase backend.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">Kotlin</span>
+                        <span class="font-bold">Firebase</span>
+                        <span class="font-bold">Material Design</span>
+                        <span class="font-bold">AI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2136&q=80" alt="Modern portfolio website design with interactive elements and smooth animations">
+                    <div class="project-overlay">
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive personal portfolio built with modern CSS techniques and JavaScript enhancements.</p>
+                    <div class="project-tags">
+                        <span class="font-bold">HTML5</span>
+                        <span class="font-bold">CSS3</span>
+                        <span class="font-bold">JavaScript</span>
+                        <span class="font-bold">Responsive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="section animate__animated animate__fadeInLeft">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Certifications</h2>
+        <div class="certifications-container">
+            <div class="certification-card">
+                <div class="certification-img">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Microsoft Learn certification badge for Machine Learning Solution design">
+                </div>
+                <div class="certification-body">
+                    <h3 class="font-bold">Design a Machine Learning Solution </h3>
+                    <p>Earned from Microsoft Learn, this certification validates skills in designing end-to-end ML solutions using Azure Machine Learning service.</p>
+                    <div class="certification-meta">
+                        <span>Microsoft</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-card">
+                <div class="certification-img">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Professional certificate for Artificial Intelligence from recognized training institute">
+                </div>
+                <div class="certification-body">
+                    <h3 class="font-bold">Artificial Intelligence Specialist</h3>
+                    <p>Comprehensive AI certification covering fundamental concepts through advanced applications from A2IT training institute.</p>
+                    <div class="certification-meta">
+                        <span>A2IT</span>
+                        <span>2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-card">
+                <div class="certification-img">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Data science certificate with Python programming focus from online learning platform">
+                </div>
+                <div class="certification-body">
+                    <h3 class="font-bold">Python for Data Science</h3>
+                    <p>Alison certification demonstrating proficiency in Python programming for data analysis and machine learning applications.</p>
+                    <div class="certification-meta">
+                        <span>Alison</span>
+                        <span>2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-card">
+                <div class="certification-img">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Intel and CBSE joint certification on AI Awareness program credentials">
+                </div>
+                <div class="certification-body">
+                    <h3 class="font-bold">AI Aware & Appreciate</h3>
+                    <p>Joint certification from Intel and CBSE covering artificial intelligence fundamentals and ethical considerations.</p>
+                    <div class="certification-meta">
+                        <span>Intel & CBSE</span>
+                        <span>2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements" class="section animate__animated animate__zoomIn">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Achievements</h2>
+    <div class="card rounded-2xl p-8 shadow-lg">
+      <ul class="list-disc list-inside space-y-2">
+        <li>Built innovative AI prototypes (voice assistants, predictive models, automation tools).</li><li>Published open-source AI projects on GitHub.</li><li>Designed logos, UI/UX prototypes, and branding for tech projects.</li><li>Contributed creative AI solutions during hackathons, workshops, and collaborative challenges.</li><li>Recognized for pushing boundaries in AI concepts and inspiring peers to explore technology.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Interests -->
+<section id="interests" class="section animate__animated animate__fadeInUp">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-6">Interests & Hobbies</h2>
+    <div class="card rounded-2xl p-8 shadow-lg">
+      <ul class="list-disc list-inside space-y-2">
+        <li>Exploring state-of-the-art AI research (Deep Learning, NLP, Computer Vision, Generative AI).</li><li>Building creative AI-powered applications.</li><li>Networking with AI communities, hackathons, and innovation challenges.</li><li>Designing AI-powered applications that blend technology with creativity.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Download CV Button -->
+<section id="download-cv" class="animate__animated animate__fadeInUp py-10 text-center">
+  <div class="max-w-6xl mx-auto px-4">
+    <a href="C:\Users\admin\OneDrive\Desktop\portfolio\KV-resume.pdf" class="btn">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+    <div class="container mx-auto px-6">
+        <h2 class="section-title text-2xl md:text-3xl font-bold gradient-text mb-12">Get In Touch</h2>
+        <div class="flex flex-col md:flex-row md:space-x-12">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h3 class="text-2xl font-semibold mb-6 gradient-text">Contact Information</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600 dark:text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Email</h4>
+                            <a href="mailto:kv.kunwarvinay2005@gmail.com" class="mt-2 hover:underline">kv.kunwarvinay2005@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-purple-600 dark:text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Phone</h4>
+                            <a href="tel:+919464886899" class="mt-2 hover:underline">+91 94648 86899</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                            <i class="fab fa-linkedin-in text-green-600 dark:text-green-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/kunwar-vinay-kv16122005" target="_blank" rel="noopener" class="mt-2 hover:underline">www.linkedin.com/in/kunwar-vinay-kv16122005</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-500 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fab fa-github-alt text-blue-600 dark:text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">GitHub</h4>
+                            <a href="https://github.com/kvmehra1612" target="_blank" rel="noopener" class="mt-2 hover:underline">https://github.com/kvmehra1612</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+                <h3 class="text-2xl font-semibold mb-6 gradient-text">Send a Message</h3>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 font-medium">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Subject">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-500" placeholder="Your Message"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="animate__animated animate__fadeInUp py-10 border-t border-gray-300">
+   <class="py-8" style="background-color: var(--card-bg);">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/kvmehra1612" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kunwar-vinay-kv16122005" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.kaggle.com/kunwarvinay" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </div>
+            <p class="max-w-6xl mx-auto px-4 text-sm text-gray-400">© 2025 Kunwar Vinay. Built with HTML, TailwindCSS & a sprinkle of JavaScript.</p>
+            
+        </div>
+    </footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('menuBtn').addEventListener('click', function() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden');
+  });
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
+      }
+    });
+  });
+  // Print (Note: The print button was not present in the original HTML, but the function is here if you add one)
+  // document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+  // Project filter functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.projects-container .project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        });
+    });
+});
+
+// Theme toggle functionality
+document.getElementById('themeToggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
+    const icon = this.querySelector('i');
+    if (document.body.classList.contains('dark')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+</script>
+
+</body>
+</html>
